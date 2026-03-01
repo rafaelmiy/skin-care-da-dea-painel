@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin da Déa | Painel de Produtos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="avatar">💆🏽‍♀️</span>
+          <div>
+            <h1>Skin da Déa</h1>
+            <p class="muted">Painel de validade de produtos</p>
+          </div>
+        </div>
+        <button class="icon-btn" aria-label="Sair">↪</button>
+      </header>
+
+      <section class="controls">
+        <label class="search">
+          <span>🔎</span>
+          <input id="searchInput" type="text" placeholder="Buscar produto, marca..." />
+        </label>
+
+        <div class="chips" id="statusFilters">
+          <button class="chip active" data-filter="all">Todos</button>
+          <button class="chip" data-filter="expired">Vencidos</button>
+          <button class="chip" data-filter="expiring">Vencendo</button>
+          <button class="chip" data-filter="favorites">⭐ Favoritos</button>
+          <button class="chip" data-filter="morning">🌞 Manhã</button>
+          <button class="chip" data-filter="night">🌙 Noite</button>
+        </div>
+
+        <div class="toolbar">
+          <button class="ghost">⚙️ Stats</button>
+          <button class="ghost">Validade ↑</button>
+        </div>
+      </section>
+
+      <section class="summary" id="summary"></section>
+
+      <section class="cards" id="productGrid"></section>
+    </main>
+
+    <template id="productCardTemplate">
+      <article class="card">
+        <img class="card-image" alt="" loading="lazy" />
+        <div class="card-content">
+          <h2 class="name"></h2>
+          <p class="brand-line"></p>
+          <p class="category"></p>
+          <p class="badge"></p>
+          <div class="progress-track"><span class="progress-fill"></span></div>
+          <footer class="card-footer">
+            <div class="timeslot"></div>
+            <strong class="price"></strong>
+          </footer>
+        </div>
+      </article>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
